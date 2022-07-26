@@ -6,7 +6,7 @@
     --color-background: #eff6f5;
     --color-texto: #a1a5a6;
     --font-family: 'Open Sans'; 
-};
+}
 
 /* Estilos Generales */
 
@@ -14,10 +14,50 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: var(--font-family)
-};
+    font-family: var(--font-family);
+}
 
 body {
     background: var(--color-background);
+}
+
+.titulos {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.subtitulo {
+    font-size: 25px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--color-primario);
+}
+
+.btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--color-primario);
+    padding: 15px 30px;
+    outline: none;
+    border: 2px solid var(--color-primario);
+    cursor: pointer;
+    position: relative;
+    top: 20px;
+    transition: all .3s;
+}
+
+.btn span {
+    padding-left: 10px;
+}
+
+.btn:hover {
+    padding: 15px 45px;
 }
 
