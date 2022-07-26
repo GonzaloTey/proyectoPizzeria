@@ -1,0 +1,23 @@
+/* Variables */
+
+:root {
+    --color-primario: #fcb03b;
+    --color-secundario: #e92f3d;
+    --color-background: #eff6f5;
+    --color-texto: #a1a5a6;
+    --font-family: 'Open Sans'; 
+};
+
+/* Estilos Generales */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family)
+};
+
+body {
+    background: var(--color-background);
+}
+
