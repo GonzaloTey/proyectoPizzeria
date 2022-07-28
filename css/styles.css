@@ -4,6 +4,7 @@
     --color-primario: #fcb03b;
     --color-secundario: #e92f3d;
     --color-secundario-opaco: #e92f3d30;
+    --color-borde-gris: #dedede;
     --color-background: #eff6f5;
     --color-background-secundario: #333;
     --color-texto: #a1a5a6;
@@ -63,7 +64,7 @@ body {
     padding: 15px 45px;
 }
 
-/* Encabezado */
+/* ENCABEZADO */
 
 .menu__principal {
     display: flex;
@@ -138,7 +139,7 @@ body {
     color: var(--color-secundario);
 }
 
-/* Slider de productos */
+/* SLIDER DE PRODUCTOS */
 
 #menuProductos .contenedor__principal {
     display: flex;
@@ -181,6 +182,7 @@ body {
     display: flex;
     overflow: hidden;
     height: calc(100vh - 80px);
+    scroll-behavior: smooth;
 }
 
 .container__productos {
@@ -230,22 +232,155 @@ body {
 }
 
 
+/* Seccion Servicios */
+
+#servicios {
+    height: 100vh;
+    /* width: 100%; */
+    background-color: #fff;
+    padding: 40px;
+}
+
+.servicios__titulos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicios__container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,auto);
+    gap: 30px;
+    grid-template-areas: "ingredientes imagenCentral rapidez"
+                         "calidad      imagenCentral delivery";
+}
+
+.imagen__central {
+    grid-area: imagenCentral;
+    transition: all .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen__central:hover {
+    transform: scale(1.04);
+}
+
+.calidad {
+    grid-area: calidad;
+}
+
+.ingredientes { 
+    grid-area: ingredientes;
+}
+
+.rapidez {
+    grid-area: rapidez;
+}
+
+.delivery {
+    grid-area: delivery;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.items p span {
+    width: 95px;
+    font-size: 40px;
+    color: var(--color-secundario);
+    padding: 20px;
+    border: 1px double var(--color-borde-gris);
+    border-radius: 50%;
+    text-align: center;
+    transition: all .5s;
+}
+
+.items p span:hover {
+    background-color: var(--color-secundario);
+    color: #fff;
+}
+
+.ingredientes p span,
+.calidad p span {
+    color: var(--color-primario);
+} 
+
+.ingredientes p span:hover,
+.calidad p span:hover {
+    color: #fff;
+    background-color: var(--color-primario);
+} 
+
+.items .titulo--item {
+    padding-top: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.items .texto--item {
+    font-size: 14px;
+    color: var(--color-texto);
+    text-align: center;
+    font-style: italic;
+    padding: 0 20px;
+}
 
 
 
 
+/* Responsive Design - MEDIA QUERYS */
 
+@media screen and (max-width: 850px) {
 
+    /* Slider de productos */
 
+    .container__productos {
+        flex-direction: column;
+    }
 
+    .descripcion__productos {
+        width: 70%;
+        order: 1;
+    }
 
+    .descripcion__productos .btn {
+        padding: 10px 20px;
+    }
 
+    .descripcion__productos .btn:hover {
+        padding: 10px 30px;
+    }
 
+    /* Seccion Servicios */
 
+    .servicios__container {
+        margin-top: 50px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "ingredientes  rapidez"
+                             "calidad       delivery";
+    }
 
-/* Responsive Design */
+    .imagen__central {
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 700px) {
+    
+    /* Encabezado */
+
     .menu__principal {
         position: fixed;
         top: 0;
@@ -291,6 +426,25 @@ body {
     .menu-bar .sociales a {
         font-size: 20px;
     }
+
+    /* Slider de productos */
+
+    .slider {
+        height: calc(100vh - 0);
+    }
+
+    .descripcion__productos h1 {
+        font-size: 7vw;
+    }
+
+    .descripcion__productos h2 {
+        font-size: 3vw;
+    }
+
+    .imagen__productos {
+        width: 65%;
+    }
+
 }
 
 
