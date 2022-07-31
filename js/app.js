@@ -39,3 +39,37 @@ btnDerecha.addEventListener("click", () => {
 btnIzquierda.addEventListener("click", () => {
     contenedor.scrollLeft -= contenedor.offsetWidth;
 });
+
+//Formulario - Validacion
+
+const formulario = document.getElementById("formulario");
+
+    //Eventos del Formulario
+
+const validar = (e) => {
+    let inputNombre = document.getElementById("nombre");
+    let inputEmail = document.getElementById("email");
+    let comentarios = document.getElementById("comentarios");
+    let alertSuccess = document.getElementById("alertSuccess");
+    let alertError = document.getElementById("alertError");
+
+    if (inputNombre.value == 0 || inputEmail.value == 0 || comentarios.value == 0) {
+        e.preventDefault();
+        alertError.classList.replace("hide", "show");
+        setTimeout(() => {
+            alertError.classList.replace("show", "hide");
+        }, 2000);
+    } else {
+        e.preventDefault();
+        alertSuccess.classList.replace("hide", "show");
+        setTimeout(() => {
+            alertSuccess.classList.replace("show", "hide");
+        }, 2000);
+
+        inputNombre.value = "";
+        inputEmail.value = "";
+        comentarios.value = "";
+    }
+};
+
+formulario.addEventListener("submit", validar);
