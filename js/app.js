@@ -73,3 +73,7 @@ const validar = (e) => {
 };
 
 formulario.addEventListener("submit", validar);
+
+//Boton Ir Arriba
+
+let
