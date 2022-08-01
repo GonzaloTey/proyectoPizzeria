@@ -93,7 +93,7 @@ window.addEventListener("scroll", () => {
     
     //Modificacion cuando se llega al footer
     
-    if (fullSize === (scroll + sizeViewport)) {
+    if (fullSize == (scroll + sizeViewport)) {
         btnArriba.classList.add("scrollFinal");
     } else btnArriba.classList.remove("scrollFinal");
 }); 
