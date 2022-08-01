@@ -76,4 +76,38 @@ formulario.addEventListener("submit", validar);
 
 //Boton Ir Arriba
 
-let
+const btnArriba = document.getElementById("btn-top");
+const logo = document.getElementById("logo");
+
+    //Tamaño de todo el Html
+const fullSize = document.documentElement.offsetHeight;
+    //Tamaño de pantalla de usuario (Lo que esta viendo)
+const sizeViewport = document.documentElement.clientHeight;
+
+window.addEventListener("scroll", () => {
+    const scroll = document.documentElement.scrollTop;
+
+    if (scroll > 100) {
+        btnArriba.classList.add("show")
+    } else btnArriba.classList.remove("show")
+    
+    //Modificacion cuando se llega al footer
+    
+    if (fullSize === (scroll + sizeViewport)) {
+        btnArriba.classList.add("scrollFinal");
+    } else btnArriba.classList.remove("scrollFinal");
+}); 
+
+    //Evento click btn-Arriba
+        //window.scrollTo = Eje x y eje y
+btnArriba.addEventListener("click", () => {
+    window.scrollTo(0,0)
+})
+
+//Funcion ir arriba en logo
+
+  //Evento Click en logo
+
+logo.addEventListener("click", () => {
+    window.scrollTo(0, 0)
+})

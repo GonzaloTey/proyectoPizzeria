@@ -698,11 +698,11 @@ footer {
 
 /* Boton Arriba */
 
-.btn-top.show {
+#btn-top.show {
     transform: translateY(0);
 }
 
-.btn-top.scrollFinal {
+#btn-top.scrollFinal {
     transform: translateY(-250%);
 }
 
@@ -885,6 +885,12 @@ footer {
 
     .sociales-metodo {
         width: 50%;
+    }
+
+    /* Boton Ir arriba */
+
+    #btn-top {
+        display: none;
     }
 
 }
